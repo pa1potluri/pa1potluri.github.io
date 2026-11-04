@@ -1,0 +1,105 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PKP Games | SP Creek, a gentle 3D world for children</title>
+<meta name="description" content="SP Creek: a hand-painted 3D valley for children that plays in the browser, built by VFX Supervisor Pavan Kumar Potluri with an AI-assisted team. Open to partners.">
+<meta property="og:title" content="SP Creek: a gentle 3D world for children">
+<meta property="og:description" content="A hand-painted 3D valley that plays in the browser. Built like a VFX show. Open to partners and investors.">
+<meta property="og:image" content="https://pa1potluri.github.io/img/games/town-day.jpg">
+<meta property="og:url" content="https://pa1potluri.github.io/games/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../site.css?v=3">
+<style>
+.ghero{min-height:76vh;display:flex;align-items:center;padding:70px 0;background:linear-gradient(90deg,#0f0d0cf2 0,#0f0d0cc8 45%,#0f0d0c40 85%),linear-gradient(0deg,#0f0d0c 0,transparent 30%),url(../img/games/town-day.jpg) center/cover no-repeat}
+@media(max-width:700px){.ghero{background:linear-gradient(0deg,#0f0d0cf5 0,#0f0d0cc0 60%,#0f0d0c70 100%),url(../img/games/town-day.jpg) 60% center/cover}}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:22px}
+.shots figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in}
+.shots img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .4s}.shots figure:hover img{transform:scale(1.04)}
+.shots figcaption{padding:10px 14px;color:var(--muted);font-size:14px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:22px;counter-reset:s}
+@media(max-width:820px){.flow{grid-template-columns:1fr}}
+.flow div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;position:relative}
+.flow div:before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--gold);color:#1a1209;font-weight:800;font-size:13px;margin-bottom:8px}
+.flow b{display:block}.flow span{color:var(--muted);font-size:14px}
+.road{list-style:none;padding:0;margin:22px 0 0;border-left:2px solid var(--line)}
+.road li{padding:0 0 22px 22px;position:relative}.road li:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--card2);border:2px solid var(--gold)}
+.road li.done:before{background:var(--gold)}.road b{display:block}.road span{color:var(--muted);font-size:15px}
+.promise{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.promise span{background:var(--card2);border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:14px}
+#lb{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:9;padding:16px}#lb.on{display:flex}
+#lb img{max-width:100%;max-height:90vh;border-radius:10px}
+</style></head><body>
+<nav><div class="wrap"><a class="brand" href="../"><span>PKP</span> STUDIO</a>
+<div class="links"><a href="../tools/">Tools</a><a href="../school/">School</a><a href="../games/" class="on">Games</a><a href="../community/">Community</a><a href="../consulting/">Consulting</a><a class="cta" href="https://pa1potluri.github.io/SP-Creek/" target="_blank" rel="noopener">Play SP Creek</a></div></div></nav>
+
+<section class="ghero"><div class="wrap">
+  <span class="tag">PKP Games · SP Creek</span>
+  <h1>A gentle world <em>for children.</em></h1>
+  <p class="sub">SP Creek is a hand-painted 3D valley that plays right in the browser: calm videos, exploring, building and simple play. No installs, no ads inside the world, nothing scary.</p>
+  <a class="btn" href="https://pa1potluri.github.io/SP-Creek/" target="_blank" rel="noopener">▶ Play now, free</a><a class="btn ghost" href="#partners">Partner with us</a>
+</div></section>
+
+<section><div class="wrap">
+  <span class="tag">Inside the valley</span>
+  <h2>Day, night <em>and four seasons.</em></h2>
+  <p class="sub">Main street with a bakery and café, a forest with fireflies, a pony farm, a flower meadow and waterfall lake, a sunset beach, a smiling ghost town, a crystal mine and a balloon hilltop. Tap a picture to see it large.</p>
+  <div class="shots">
+    <figure><img src="../img/games/town-day.jpg" alt="Main street at golden hour" loading="lazy"><figcaption>Main street at golden hour</figcaption></figure>
+    <figure><img src="../img/games/town-night.jpg" alt="Lantern light on main street at night" loading="lazy"><figcaption>Lantern light at night</figcaption></figure>
+    <figure><img src="../img/games/winter-day.jpg" alt="A snowman in the town square" loading="lazy"><figcaption>Winter in the square</figcaption></figure>
+    <figure><img src="../img/games/meadow.jpg" alt="Flower meadow and waterfall lake" loading="lazy"><figcaption>Flower meadow and waterfall lake</figcaption></figure>
+    <figure><img src="../img/games/balloon.jpg" alt="Hot air balloon on the hilltop at sunset" loading="lazy"><figcaption>The balloon hilltop</figcaption></figure>
+    <figure><img src="../img/games/deer.jpg" alt="Deer family at the forest edge" loading="lazy"><figcaption>Animal friends</figcaption></figure>
+  </div>
+  <h3 style="margin:34px 0 0">See it move</h3>
+  <div class="shots">
+    <figure><img src="../img/games/market-day.webp" alt="Market day animation" loading="lazy"><figcaption>Market day</figcaption></figure>
+    <figure><img src="../img/games/sunset-cove.webp" alt="Sunset cove animation" loading="lazy"><figcaption>Sunset cove</figcaption></figure>
+    <figure><img src="../img/games/balloon-ride.webp" alt="Balloon ride animation" loading="lazy"><figcaption>Balloon ride</figcaption></figure>
+    <figure><img src="../img/games/lantern-evening.webp" alt="Lantern evening animation" loading="lazy"><figcaption>Lantern evening</figcaption></figure>
+  </div>
+  <div class="promise"><span>🧸 No weapons or fighting</span><span>🌙 Nothing scary</span><span>🚫 No ads in the world</span><span>🔒 No data from children</span><span>💻 Plays in the browser</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="tag">How it's made</span>
+  <h2>Built like <em>a VFX show.</em></h2>
+  <p class="sub">I've run shots for Hollywood features for 21 years. SP Creek uses the same discipline: every feature is briefed, built, tested, photographed day and night, and reviewed before it's accepted. The builders are AI assistants that I direct.</p>
+  <div class="flow">
+    <div><b>Brief</b><span>The lead writes one small, clear task.</span></div>
+    <div><b>Build</b><span>The builder makes only that piece.</span></div>
+    <div><b>Test</b><span>Automatic browser tests, plus day and night pictures.</span></div>
+    <div><b>Review</b><span>Lead review, like dailies.</span></div>
+    <div><b>Approve</b><span>The director's yes, then it ships.</span></div>
+  </div>
+  <p class="sub" style="margin-top:16px">128 features shipped this way in the first two weeks.</p>
+</div></section>
+
+<section><div class="wrap">
+  <span class="tag">Roadmap</span>
+  <h2>Where it's <em>going.</em></h2>
+  <ul class="road">
+    <li class="done"><b>A painted valley you can explore</b><span>Town, nature areas, seasons, day and night, build mode, art styles and video export.</span></li>
+    <li class="done"><b>Free play version online</b><span>Live in the browser at pa1potluri.github.io/SP-Creek.</span></li>
+    <li><b>Kids choose</b><span>The most-voted idea each month gets built.</span></li>
+    <li><b>"Let's build" videos and colouring pages</b><span>From the scenes children already love.</span></li>
+    <li><b>A small tablet app</b><span>Touch-first play for younger children.</span></li>
+    <li><b>Telugu, Hindi and English</b><span>Built for India first, and for children everywhere.</span></li>
+  </ul>
+</div></section>
+
+<section id="partners"><div class="wrap split">
+  <div>
+    <span class="tag">Partners &amp; investors</span>
+    <h2>Grow it <em>with us.</em></h2>
+    <p class="sub">SP Creek is early and independent. I'm talking to schools, studios, children's brands, educators and investors who want a safe, beautiful world for kids, especially in Indian languages. Partner agreements are made one by one, in writing.</p>
+    <a class="btn" href="mailto:pa1.potluri@gmail.com?subject=SP%20Creek%20-%20partnership">Talk about a partnership</a><a class="btn ghost" href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">Message on LinkedIn</a>
+  </div>
+  <div class="card"><h3>Why me</h3><p>21 years in film VFX, 7 at Sony Pictures Imageworks (The Amazing Spider-Man 2, Edge of Tomorrow, MIB 3). I know how to run a production pipeline, and SP Creek runs on one.</p></div>
+</div></section>
+
+<footer><div class="wrap">PKP Studio · Pavan Kumar Potluri · Hyderabad, India · <a href="../consulting/">Consulting</a><a href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/pa1potluri" target="_blank" rel="noopener">GitHub</a><a href="mailto:pa1.potluri@gmail.com">Email</a></div></footer>
+<div id="lb" role="dialog" aria-label="Picture"><img alt=""></div>
+<script>
+const lb=document.getElementById('lb'),li=lb.querySelector('img');
+document.querySelectorAll('.shots figure').forEach(f=>f.onclick=()=>{const i=f.querySelector('img');li.src=i.src;li.alt=i.alt;lb.classList.add('on')});
+lb.onclick=()=>lb.classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+</script>
+</body></html>
