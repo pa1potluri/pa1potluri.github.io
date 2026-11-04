@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PKP Studio Tools | Pavan Kumar Potluri</title>
+<meta name="description" content="Production tools built by a VFX Supervisor. Pay by UPI, get your key and download.">
+<style>
+:root{--bg:#0f0d0c;--card:#1a1614;--line:#2e2622;--text:#f3ece6;--muted:#b3a69c;--gold:#e8b04a;--red:#c8372d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
+a{color:var(--gold)}.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line)}nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav a{color:var(--text);text-decoration:none;font-size:15px}nav b span{color:var(--gold)}
+header{padding:56px 0 24px}h1{font-size:clamp(34px,5vw,52px);margin:0 0 8px}h1 em{color:var(--gold);font-style:normal}
+.sub{color:var(--muted);max-width:680px}
+.product{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin:28px 0}
+@media(max-width:820px){.product{grid-template-columns:1fr}}
+.product img{width:100%;border-radius:12px;border:1px solid var(--line)}
+.product h2{margin:0 0 4px;font-size:28px}.price{font-size:30px;font-weight:800;color:var(--gold)}
+ul{color:var(--muted);padding-left:20px}
+.pay{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.qr{background:#fff;padding:10px;border-radius:12px}
+.btn{display:inline-block;background:var(--gold);color:#1a1209;font-weight:800;padding:12px 22px;border-radius:10px;text-decoration:none}
+.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0 0}.steps li{counter-increment:s;padding:6px 0 6px 40px;position:relative;color:var(--text)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:6px;width:28px;height:28px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-weight:800;font-size:14px}
+.soon{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:10px 0 50px}
+.soon div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}.soon b{display:block}.soon small{color:var(--muted)}
+footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b><span>PKP</span> Studio Tools</b><a href="../">← VFX consulting</a></div></nav>
+<header><div class="wrap">
+  <h1>Tools built by a <em>VFX Supervisor.</em></h1>
+  <p class="sub">I build these for my own productions. Simple, fast, made for people who make videos. Pay by UPI, get your licence key, download.</p>
+</div></header>
+
+<div class="wrap">
+  <div class="product">
+    <div><img src="img/step_narrator.png" alt="Step Narrator window: steps, narration and settings"></div>
+    <div>
+      <h2>Step Narrator</h2>
+      <div class="price">₹499</div>
+      <p>Making a tutorial? Press F9, do your task, press F9 again. Every click, key and file you touched becomes a clean narration script, plus timed subtitles.</p>
+      <ul>
+        <li>Narration text ready for voice-over or text-to-speech</li>
+        <li>Timed <b>.srt</b> subtitles: drop straight into CapCut, Premiere or Resolve</li>
+        <li>Reads button names, menus, files and folders</li>
+        <li>The REC badge stays out of your screen recording</li>
+        <li>Windows 10 / 11 · works offline</li>
+      </ul>
+      <div class="pay">
+        <div class="qr" id="qr"></div>
+        <div><b>UPI: pa1.potluri@okaxis</b><br><span class="sub">Pavan Potluri · ₹499</span><br><br><a class="btn" id="upi" href="#">Pay on this phone</a></div>
+      </div>
+      <ol class="steps">
+        <li>Pay ₹499 by UPI (GPay, PhonePe, Paytm…).</li>
+        <li>Send the payment screenshot and your email to <a href="mailto:pa1.potluri@gmail.com?subject=Step%20Narrator%20licence">pa1.potluri@gmail.com</a> or by <a href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">LinkedIn message</a>.</li>
+        <li>You get your licence key and the download link, usually within a few hours.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h2>Coming soon</h2>
+  <div class="soon">
+    <div><b>Style Track</b><small>Video → keyframes → learn a painted look → render the whole shot.</small></div>
+    <div><b>RPM Studio</b><small>Song pipeline: compose, mix, narration, lyric subtitles, remaster.</small></div>
+    <div><b>News Shorts</b><small>News story → script → paper-cut scenes → vertical short.</small></div>
+    <div><b>Presenter Studio</b><small>Talking, moving presenters from your own character pictures.</small></div>
+    <div><b>Desk Climber</b><small>A little character that lives on your desktop.</small></div>
+    <div><b>Hero</b><small>Your desktop assistant that runs all the tools.</small></div>
+  </div>
+</div>
+<footer><div class="wrap">Pavan Kumar Potluri · PKP Studio · Hyderabad, India · <a href="../">VFX consulting</a> · Outside India? Message me for a card / PayPal option.</div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+// plain @ and %20: some UPI apps reject %40 or + in the link
+const link=`upi://pay?pa=pa1.potluri@okaxis&pn=${encodeURIComponent('Pavan Potluri')}&am=499&cu=INR&tn=${encodeURIComponent('Step Narrator licence')}`;
+document.getElementById('upi').href=link;
+if(window.QRCode)new QRCode(document.getElementById('qr'),{text:link,width:150,height:150,correctLevel:QRCode.CorrectLevel.M});
+</script>
+</body>
+</html>
