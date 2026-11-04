@@ -35,3 +35,6 @@ footer{padding:34px 0;color:var(--muted);font-size:14px}footer a{margin-right:14
 .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}.gallery a:hover img{transform:scale(1.04)}
 .gallery a:last-child{grid-column:span 2}
 @media(max-width:760px){.gallery{grid-template-columns:1fr;grid-template-rows:none}.gallery a,.gallery a:first-child,.gallery a:last-child{grid-row:auto;grid-column:auto;height:240px}}
+.cmp-grid{display:grid;grid-template-columns:.72fr 1fr;gap:14px;margin-top:22px;align-items:start}
+.cmp-col{display:grid;gap:14px}
+@media(max-width:760px){.cmp-grid{grid-template-columns:1fr}}

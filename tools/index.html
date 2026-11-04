@@ -16,8 +16,6 @@ header{padding:56px 0 24px}h1{font-size:clamp(34px,5vw,52px);margin:0 0 8px}h1 e
 .product{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin:28px 0}
 @media(max-width:820px){.product{grid-template-columns:1fr}}
 .product img{width:100%;border-radius:12px;border:1px solid var(--line)}
-#stMain{max-height:540px;object-fit:contain;background:#000}
-.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}.thumbs img{height:70px;object-fit:cover;cursor:pointer;border-radius:8px}.thumbs img:hover{outline:2px solid var(--gold)}
 .product h2{margin:0 0 4px;font-size:28px}.price{font-size:30px;font-weight:800;color:var(--gold)}
 ul{color:var(--muted);padding-left:20px}
 .pay{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:10px}
@@ -29,6 +27,7 @@ ul{color:var(--muted);padding-left:20px}
 .soon div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}.soon b{display:block}.soon small{color:var(--muted)}
 footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 </style>
+<link rel="stylesheet" href="../compare.css">
 </head>
 <body>
 <nav><div class="wrap"><b><span>PKP</span> Studio Tools</b><a href="../">← PKP Studio home</a></div></nav>
@@ -65,12 +64,10 @@ footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var
 
   <div class="product" id="style-track">
     <div>
-      <img src="../img/showcase/p32_oil.jpg" alt="Photograph on the left, the same frame as an oil painting on the right" id="stMain">
-      <div class="thumbs">
-        <img src="../img/showcase/p32_oil.jpg" alt="oil painting"><img src="../img/showcase/p21_watercolor.jpg" alt="watercolour">
-        <img src="../img/showcase/p4_anime.jpg" alt="anime"><img src="../img/showcase/p31_papercut.jpg" alt="paper-cut">
-      </div>
-      <p class="sub" style="font-size:13px">Left: my original photographs. Right: the painted look. Paint one keyframe, Style Track carries it through every frame of your video.</p>
+      <figure class="compare" style="max-width:420px;margin:0 auto" data-before="../img/pairs/p32_photo.jpg"
+        data-after='{"Oil":"../img/pairs/p32_oil.jpg","Watercolour":"../img/pairs/p32_watercolor.jpg","Anime":"../img/pairs/p32_anime.jpg","Pencil":"../img/pairs/p32_sketch.jpg"}'
+        data-caption="Garden portrait · photograph by Pavan Kumar Potluri"></figure>
+      <p class="sub" style="font-size:13px">Drag the gold handle: my original photograph on the left, the painted look on the right. Paint one keyframe and Style Track carries it through every frame of your video. <a href="../#made">More examples</a></p>
     </div>
     <div>
       <h2>Style Track</h2>
@@ -111,8 +108,7 @@ footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var
 const link = (amt, note) => `upi://pay?pa=pa1.potluri@okaxis&pn=${encodeURIComponent('Pavan Potluri')}&am=${amt}&cu=INR&tn=${encodeURIComponent(note)}`;
 document.querySelectorAll('a.upi').forEach(a => a.href = link(a.dataset.amt, a.dataset.note));
 if (window.QRCode) document.querySelectorAll('.qr').forEach(q => new QRCode(q, {text: link(q.dataset.amt, q.dataset.note), width: 150, height: 150, correctLevel: QRCode.CorrectLevel.M}));
-const main = document.getElementById('stMain');
-document.querySelectorAll('.thumbs img').forEach(i => i.onclick = () => { main.src = i.src; main.alt = i.alt; });
 </script>
+<script src="../compare.js"></script>
 </body>
 </html>
