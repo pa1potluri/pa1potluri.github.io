@@ -1,16 +1,35 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PKP Studio Community | Made by creators</title>
-<meta name="description" content="Share what you made with PKP Studio tools and lessons. The best work gets featured.">
-<link rel="stylesheet" href="../site.css"></head><body>
+<meta name="description" content="Photography by Pavan Kumar Potluri, and work by creators using PKP Studio tools and lessons.">
+<link rel="stylesheet" href="../site.css?v=2">
+<style>
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.chips button{font:700 14px system-ui,sans-serif;padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer}
+.chips button.on{background:var(--gold);color:#1a1209;border-color:var(--gold)}
+.masonry{columns:4 260px;column-gap:12px}
+.masonry a{display:block;margin:0 0 12px;break-inside:avoid;border-radius:12px;overflow:hidden;border:1px solid var(--line);position:relative}
+.masonry img{width:100%;display:block;transition:transform .4s}.masonry a:hover img{transform:scale(1.04)}
+.masonry a span{position:absolute;left:8px;bottom:8px;padding:2px 9px;border-radius:99px;background:#000b;color:var(--muted);font-size:12px}
+.lb{position:fixed;inset:0;z-index:50;background:#0a0908f2;display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}.lb img{max-width:calc(100vw - 120px);max-height:calc(100vh - 80px);border-radius:8px;box-shadow:0 10px 40px #000}
+.lb button{position:absolute;border:0;background:#221d1a;color:var(--text);width:46px;height:46px;border-radius:50%;font-size:20px;cursor:pointer}
+.lb .x{top:12px;right:14px}.lb .p{left:14px;top:50%}.lb .n{right:14px;top:50%}
+.lb .c{position:absolute;bottom:12px;color:var(--muted);font-size:14px}
+@media(max-width:600px){.lb img{max-width:calc(100vw - 20px)}.lb .p,.lb .n{top:auto;bottom:40px}}
+</style></head><body>
 <nav><div class="wrap"><a class="brand" href="../"><span>PKP</span> STUDIO</a>
 <div class="links"><a href="../tools/">Tools</a><a href="../school/">School</a><a href="../community/" class="on">Community</a><a href="../consulting/">Consulting</a><a class="cta" href="../tools/">Get the tools</a></div></div></nav>
+
 <section><div class="wrap">
   <span class="tag">Community</span>
   <h1>Made by <em>creators.</em></h1>
-  <p class="sub">Tutorials, songs, shorts, paper-cut films, painted shots: if you made it with a PKP tool or lesson, show it here.</p>
+  <p class="sub">It starts with my own photography: people, children, families and places I've shot over the years. Made something with a PKP tool or lesson? It can be here next. Tap any picture to see it full size.</p>
+  <div class="chips" id="chips"></div>
+  <div class="masonry" id="grid"></div>
 </div></section>
+
 <section><div class="wrap">
-  <h2>How to share</h2>
+  <h2>Share your work</h2>
   <div class="grid">
     <div class="card"><div class="icon">1</div><h3>Post it</h3><p>On LinkedIn, YouTube or Instagram, with <b>#PKPStudio</b> and the tool you used.</p></div>
     <div class="card"><div class="icon">2</div><h3>Send the link</h3><p>Email it or message me on LinkedIn, with one line about how you made it.</p></div>
@@ -18,9 +37,31 @@
   </div>
   <a class="btn" href="mailto:pa1.potluri@gmail.com?subject=PKP%20Community%20-%20my%20work">Share your work</a>
 </div></section>
-<section><div class="wrap">
-  <h2>Featured work</h2>
-  <p class="sub">Nothing here yet: the first creators to share get the first spots.</p>
-</div></section>
-<footer><div class="wrap">PKP Studio · Pavan Kumar Potluri · Hyderabad, India · <a href="../consulting/">Consulting</a><a href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:pa1.potluri@gmail.com">Email</a></div></footer>
+<footer><div class="wrap">Photographs © Pavan Kumar Potluri · PKP Studio · Hyderabad, India · <a href="../consulting/">Consulting</a><a href="https://www.facebook.com/pavanpotluriphotography/" target="_blank" rel="noopener">Photography page</a><a href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">LinkedIn</a></div></footer>
+
+<div class="lb" id="lb"><button class="x" aria-label="Close">✕</button><button class="p" aria-label="Previous">‹</button><img alt=""><button class="n" aria-label="Next">›</button><div class="c"></div></div>
+<script>
+(async () => {
+  const list = await (await fetch('../img/community/list.json')).json();
+  const cats = ['All', ...new Set(list.map(x => x.cat))];
+  let shown = list, at = 0;
+  const grid = document.getElementById('grid'), chips = document.getElementById('chips'), lb = document.getElementById('lb'), big = lb.querySelector('img');
+  chips.innerHTML = cats.map((c, i) => `<button class="${i ? '' : 'on'}" data-c="${c}">${c}</button>`).join('');
+  const draw = () => {
+    grid.innerHTML = shown.map((x, i) => `<a href="../img/community/g${x.id}.jpg" data-i="${i}"><img loading="lazy" src="../img/community/g${x.id}_t.jpg" alt="${x.cat} photograph by Pavan Kumar Potluri"><span>${x.cat}</span></a>`).join('');
+    grid.querySelectorAll('a').forEach(a => a.onclick = e => { e.preventDefault(); open(+a.dataset.i); });
+  };
+  chips.querySelectorAll('button').forEach(b => b.onclick = () => {
+    chips.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+    shown = b.dataset.c === 'All' ? list : list.filter(x => x.cat === b.dataset.c); draw();
+  });
+  const open = i => { at = (i + shown.length) % shown.length; big.src = `../img/community/g${shown[at].id}.jpg`; lb.querySelector('.c').textContent = `${shown[at].cat} · ${at + 1} / ${shown.length} · © Pavan Kumar Potluri`; lb.classList.add('on'); document.body.style.overflow = 'hidden'; };
+  const close = () => { lb.classList.remove('on'); document.body.style.overflow = ''; };
+  lb.querySelector('.x').onclick = close; lb.querySelector('.p').onclick = () => open(at - 1); lb.querySelector('.n').onclick = () => open(at + 1);
+  lb.onclick = e => { if (e.target === lb) close(); };
+  document.addEventListener('keydown', e => { if (!lb.classList.contains('on')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') open(at - 1); if (e.key === 'ArrowRight') open(at + 1); });
+  let sx = null; lb.addEventListener('touchstart', e => sx = e.touches[0].clientX); lb.addEventListener('touchend', e => { if (sx === null) return; const d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 50) open(at + (d < 0 ? 1 : -1)); sx = null; });
+  draw();
+})();
+</script>
 </body></html>

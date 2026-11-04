@@ -36,7 +36,14 @@ td b{display:block}td span{color:var(--muted);font-size:15px}
 footer{padding:36px 0;color:var(--muted);font-size:14px}
 nav a.cta{white-space:nowrap}body{overflow-x:hidden}.credits span{white-space:nowrap}
 @media(max-width:600px){nav b{font-size:13px}table,tbody,tr,td{display:block;width:100%}td{border:0;padding:4px 0}tr{border-bottom:1px solid var(--line);padding:12px 0}td:last-child{text-align:left}.btn{display:block;text-align:center;margin:14px 0 0}}
+.calc{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.calc h3{margin:0 0 12px}.calc-row{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:14px}.calc-row label{cursor:pointer}
+.calc input[type=radio],.calc input[type=range]{accent-color:var(--gold)}
+.calc-n{display:flex;align-items:center;gap:12px}.calc-n input{flex:1;max-width:420px}
+.calc-out{margin-top:14px;font-size:30px}.calc-out b{color:var(--gold)}.calc-out span{color:var(--muted);font-size:18px;margin-left:8px}
+.calc-note{color:var(--muted);font-size:14px;margin:6px 0 0}
 </style>
+<link rel="stylesheet" href="../compare.css?v=2">
 </head>
 <body>
 <nav><div class="wrap"><a href="../" style="margin:0;font-weight:800;letter-spacing:.04em">PKP STUDIO</a><div class="links"><a href="#solve">What I solve</a><a href="#work">Ways to work</a><a href="#about">Experience</a><a href="../tools/">Tools shop</a><a class="cta" href="#start">Free call</a></div></div></nav>
@@ -80,6 +87,24 @@ nav a.cta{white-space:nowrap}body{overflow-x:hidden}.credits span{white-space:no
     <tr><td><b>Supervisor by the week</b><span>Ongoing oversight, troubleshooting and team guidance.</span></td><td>₹1,10,000 / $3,000</td></tr>
     <tr><td><b>Project / part-time supervisor</b><span>Supervision tailored to your production, e.g. two days a week across a series.</span></td><td>Quoted</td></tr>
   </table>
+
+  <div class="calc">
+    <h3>Estimate your engagement</h3>
+    <div class="calc-row">
+      <label><input type="radio" name="eng" value="day" checked> By the day</label>
+      <label><input type="radio" name="eng" value="week"> By the week</label>
+      <label><input type="radio" name="eng" value="ask"> Ask a Supervisor (per problem)</label>
+    </div>
+    <label class="calc-n"><span id="calcLabel">Days</span> <input type="range" id="calcN" min="1" max="20" value="3"> <b id="calcNv">3</b></label>
+    <div class="calc-out"><b id="calcInr">₹75,000</b> <span id="calcUsd">≈ $2,100</span></div>
+    <p class="calc-note">A starting estimate. The free 20-minute call sets the real scope. <a href="#start">Book it ↓</a></p>
+  </div>
+</div></section>
+
+<section id="breakdown"><div class="wrap">
+  <h2>From plate to final shot</h2>
+  <p class="sub">Drag the gold handle. Left: my original photograph, the <b>plate</b>. Right: the <b>final composite</b>, with moon, lanterns, birds, god rays and a new grade, while the temple, wires and people stay locked in place. That's what supervision protects. Open <b>Full view</b> to zoom in.</p>
+  <figure class="compare" style="margin-top:18px" data-before-label="Plate" data-before="../img/pairs/vfx_p31_plate.jpg" data-after='{"Final comp":"../img/pairs/vfx_p31_final.jpg"}' data-caption="Temple at sunset · plate: photograph by Pavan Kumar Potluri"></figure>
 </div></section>
 
 <section id="about"><div class="wrap">
@@ -104,5 +129,20 @@ nav a.cta{white-space:nowrap}body{overflow-x:hidden}.credits span{white-space:no
 </div></section>
 
 <footer><div class="wrap">Pavan Kumar Potluri · VFX Supervisor · Hyderabad, India · <a href="https://www.linkedin.com/in/pavanpotluri">LinkedIn</a> · <a href="https://github.com/pa1potluri">GitHub</a></div></footer>
+<script src="../compare.js?v=2"></script>
+<script>
+const RATES = {day: [25000, 700, 'Days', 20], week: [110000, 3000, 'Weeks', 12], ask: [7500, 150, 'Problems', 10]};
+const fmt = n => '₹' + n.toLocaleString('en-IN');
+function calc() {
+  const k = document.querySelector('[name=eng]:checked').value, [inr, usd, label, max] = RATES[k], s = document.getElementById('calcN');
+  s.max = max; if (+s.value > max) s.value = max;
+  const n = +s.value;
+  document.getElementById('calcLabel').textContent = label; document.getElementById('calcNv').textContent = n;
+  document.getElementById('calcInr').textContent = fmt(inr * n);
+  document.getElementById('calcUsd').textContent = '≈ $' + (usd * n).toLocaleString('en-US');
+}
+document.querySelectorAll('[name=eng]').forEach(r => r.onchange = calc);
+document.getElementById('calcN').oninput = calc; calc();
+</script>
 </body>
 </html>

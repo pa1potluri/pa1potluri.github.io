@@ -27,7 +27,7 @@ ul{color:var(--muted);padding-left:20px}
 .soon div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}.soon b{display:block}.soon small{color:var(--muted)}
 footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 </style>
-<link rel="stylesheet" href="../compare.css">
+<link rel="stylesheet" href="../compare.css?v=2">
 </head>
 <body>
 <nav><div class="wrap"><b><span>PKP</span> Studio Tools</b><a href="../">← PKP Studio home</a></div></nav>
@@ -109,6 +109,6 @@ const link = (amt, note) => `upi://pay?pa=pa1.potluri@okaxis&pn=${encodeURICompo
 document.querySelectorAll('a.upi').forEach(a => a.href = link(a.dataset.amt, a.dataset.note));
 if (window.QRCode) document.querySelectorAll('.qr').forEach(q => new QRCode(q, {text: link(q.dataset.amt, q.dataset.note), width: 150, height: 150, correctLevel: QRCode.CorrectLevel.M}));
 </script>
-<script src="../compare.js"></script>
+<script src="../compare.js?v=2"></script>
 </body>
 </html>

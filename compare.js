@@ -14,7 +14,7 @@
           <div class="cmp-clip"><img class="cmp-before" alt="original photo" draggable="false"></div>
         </div>
         <div class="cmp-line"><span class="cmp-knob">⟷</span></div>
-        <span class="cmp-tag cmp-tag-l">Photo</span><span class="cmp-tag cmp-tag-r"></span>
+        <span class="cmp-tag cmp-tag-l">${opts.beforeLabel || 'Photo'}</span><span class="cmp-tag cmp-tag-r"></span>
       </div>
       <div class="cmp-bar">
         <div class="cmp-styles">${names.length > 1 ? names.map((n, i) => `<button type="button" data-s="${n}" class="${i ? '' : 'on'}">${n}</button>`).join('') : ''}</div>
@@ -105,6 +105,6 @@
   document.querySelectorAll('figure.compare[data-before]').forEach(f => {
     let after = f.dataset.after;
     try { after = JSON.parse(after); } catch (e) { /* plain path */ }
-    build(f, {before: f.dataset.before, after, caption: f.dataset.caption || ''});
+    build(f, {before: f.dataset.before, beforeLabel: f.dataset.beforeLabel, after, caption: f.dataset.caption || ''});
   });
 })();

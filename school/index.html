@@ -1,24 +1,60 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PKP School | Compositing and AI creative pipelines</title>
 <meta name="description" content="Practical VFX compositing and AI-assisted pipeline lessons from a 21-year VFX Supervisor.">
-<link rel="stylesheet" href="../site.css"></head><body>
+<link rel="stylesheet" href="../site.css?v=2"><link rel="stylesheet" href="../compare.css?v=2">
+<style>
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:22px}
+.course{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .2s,border-color .2s;text-align:left;color:var(--text);font:inherit;padding:0}
+.course:hover,.course.open{border-color:var(--gold);transform:translateY(-3px)}
+.course img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.course .in{padding:16px}.course h3{margin:0 0 4px;font-size:19px}.course p{margin:0;color:var(--muted);font-size:15px}
+.course .more{display:none;margin-top:10px;color:var(--text);font-size:14px}.course.open .more{display:block}
+.course .more li{margin:4px 0;color:var(--muted)}
+.lesson{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;align-items:start;margin-top:20px}
+@media(max-width:820px){.lesson{grid-template-columns:1fr}}
+.lesson ol{color:var(--muted);padding-left:20px}.lesson li{margin:8px 0}.lesson li b{color:var(--text)}
+</style></head><body>
 <nav><div class="wrap"><a class="brand" href="../"><span>PKP</span> STUDIO</a>
 <div class="links"><a href="../tools/">Tools</a><a href="../school/" class="on">School</a><a href="../community/">Community</a><a href="../consulting/">Consulting</a><a class="cta" href="../tools/">Get the tools</a></div></div></nav>
+
 <section><div class="wrap">
   <span class="tag">PKP School</span>
   <h1>Learn the craft <em>behind the frame.</em></h1>
-  <p class="sub">Taught from 21 years of production, including 7 at Sony Pictures Imageworks. Real techniques, original footage only, no studio secrets. Free lessons first; short paid courses for depth.</p>
+  <p class="sub">Taught from 21 years of production, including 7 at Sony Pictures Imageworks. Real techniques, my own footage, no studio secrets. Free lessons first, short paid courses for depth. Tap a course to see what's inside.</p>
+  <div class="courses">
+    <button class="course"><img src="../img/school/course1.jpg" alt="Layered film elements on a compositing screen"><div class="in">
+      <h3>Intro to Compositing <span class="pill free">Free</span></h3><p>How a shot is built, and what supervisors check first.</p>
+      <ul class="more"><li>Plates, mattes, merges and layer order</li><li>Reading a node graph</li><li>The 5 things that make a comp look fake</li></ul></div></button>
+    <button class="course"><img src="../img/school/course2.jpg" alt="CG spaceship being integrated into a sunset plate"><div class="in">
+      <h3>Advanced Compositing <span class="pill">₹1,999</span></h3><p>Matching CG to the plate at studio level.</p>
+      <ul class="more"><li>Edges, black levels and light wrap</li><li>Grain, defocus and motion blur matching</li><li>Building depth with atmosphere</li></ul></div></button>
+    <button class="course"><img src="../img/school/course3.jpg" alt="Glowing creative pipeline of connected media"><div class="in">
+      <h3>AI Creative Pipelines <span class="pill">₹1,499</span></h3><p>Using AI inside a real pipeline, with quality checks.</p>
+      <ul class="more"><li>Where AI helps and where it breaks</li><li>Style transfer, roto and upscaling in practice</li><li>Review gates so quality stays high</li></ul></div></button>
+    <button class="course"><img src="../img/school/course4.jpg" alt="A shot breakdown wall from plate to final"><div class="in">
+      <h3>Project Breakdown Workshop <span class="pill">₹999</span></h3><p>One full shot, start to final, every decision explained.</p>
+      <ul class="more"><li>Plate → roto → CG passes → final</li><li>Why each choice was made</li><li>Your questions answered live</li></ul></div></button>
+  </div>
+  <p class="sub" style="margin-top:14px">Also: <b>Portfolio Review</b> ₹2,999, 45 minutes on your reel with written notes.</p>
 </div></section>
-<section><div class="wrap">
-  <h2>Courses</h2>
-  <div class="grid">
-    <div class="card"><h3>Intro to Compositing <span class="pill free">Free</span></h3><p>How a shot is built: plates, mattes, merges, and what supervisors check first.</p></div>
-    <div class="card"><h3>Advanced Compositing <span class="pill">₹1,999</span></h3><p>Edges, black levels, light wrap, grain and depth: matching CG to the plate at studio level.</p></div>
-    <div class="card"><h3>AI Creative Pipelines <span class="pill">₹1,499</span></h3><p>Using AI tools inside a real pipeline: where they help, where they break, and quality checks.</p></div>
-    <div class="card"><h3>Project Breakdown Workshop <span class="pill">₹999</span></h3><p>One full shot, start to final, with every decision explained.</p></div>
-    <div class="card"><h3>Portfolio Review <span class="pill">₹2,999</span></h3><p>45 minutes on your reel and next steps, with written notes after.</p></div>
+
+<section id="lesson"><div class="wrap">
+  <span class="tag">Free mini-lesson</span>
+  <h2>Flat footage → <em>finished grade</em></h2>
+  <div class="lesson">
+    <figure class="compare" data-before-label="Flat (log)" data-before="../img/pairs/grade_p17_flat.jpg" data-after='{"Graded":"../img/pairs/grade_p17_graded.jpg"}' data-caption="Sunset silhouette · photograph by Pavan Kumar Potluri"></figure>
+    <div>
+      <p class="sub">Cameras record flat, low-contrast "log" images to keep detail. Drag the handle to see what the grade does. Left is the flat version, right is the final.</p>
+      <ol>
+        <li><b>Set black and white points</b>: the silhouette gets real black, the sun gets real white.</li>
+        <li><b>Add contrast with a curve</b>, not the contrast slider, so the sky keeps its detail.</li>
+        <li><b>Push saturation in the warm range</b> only, so the water and sky glow without the rest turning orange.</li>
+        <li><b>Check the silhouette edge</b>: no halo, no lost detail in the sky around the figure.</li>
+      </ol>
+    </div>
   </div>
 </div></section>
+
 <section><div class="wrap">
   <h2>First lessons are <em>being recorded.</em></h2>
   <p class="sub">Want the free Intro to Compositing the day it's out, and early prices on the paid courses? Send one line and you're on the list.</p>
@@ -26,4 +62,6 @@
   <a class="btn ghost" href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">Follow on LinkedIn</a>
 </div></section>
 <footer><div class="wrap">PKP Studio · Pavan Kumar Potluri · Hyderabad, India · <a href="../consulting/">Consulting</a><a href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:pa1.potluri@gmail.com">Email</a></div></footer>
+<script src="../compare.js?v=2"></script>
+<script>document.querySelectorAll('.course').forEach(c => c.onclick = () => c.classList.toggle('open'));</script>
 </body></html>
