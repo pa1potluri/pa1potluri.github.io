@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>PKP Payment Test</title>
+<link rel="stylesheet" href="../site.css">
+<style>
+:root{color-scheme:dark}
+body{background:#0f0d0c}
+.box{max-width:560px;margin:40px auto;padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.qr{background:#fff;padding:10px;border-radius:12px;display:inline-block}
+.pay{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:14px 0}
+ol li{margin:6px 0}
+</style>
+</head>
+<body>
+<div class="box">
+  <h2 style="margin-top:0">Payment test: ₹1</h2>
+  <p class="sub">Private test page (not linked anywhere). Scan with any UPI app and pay ₹1.</p>
+  <div class="pay">
+    <div class="qr" data-amt="1" data-note="PKP payment test"></div>
+    <div><b>UPI: pa1.potluri@okaxis</b><br><span class="sub">Pavan Potluri · ₹1</span><br><br><a class="btn upi" href="#" data-amt="1" data-note="PKP payment test">Pay on this phone</a></div>
+  </div>
+  <ol>
+    <li>Pay ₹1 and check it arrives in your GPay.</li>
+    <li>Open Key Maker, pick the tool, type the buyer email, make the key.</li>
+    <li>The message it copies has the download link and key: open the link, install, activate.</li>
+  </ol>
+  <p class="sub">Download links (same as in the message):<br>
+  <a href="https://github.com/pa1potluri/pkp-studio/releases/download/step-narrator-v1.0/Step.Narrator.Setup.exe">Step Narrator</a> ·
+  <a href="https://github.com/pa1potluri/pkp-studio/releases/download/style-track-v1.0/Style.Track.Setup.exe">Style Track</a> ·
+  <a href="https://github.com/pa1potluri/pkp-studio/releases/download/painting-studio-v1.0/Painting.Studio.Setup.exe">Painting Studio</a> ·
+  <a href="https://github.com/pa1potluri/pkp-studio/releases/download/paper-cut-studio-v1.0/Paper.Cut.Studio.Setup.exe">Paper Cut Studio</a></p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const link = (amt, note) => `upi://pay?pa=pa1.potluri@okaxis&pn=${encodeURIComponent('Pavan Potluri')}&am=${amt}&cu=INR&tn=${encodeURIComponent(note)}`;
+document.querySelectorAll('a.upi').forEach(a => a.href = link(a.dataset.amt, a.dataset.note));
+if (window.QRCode) document.querySelectorAll('.qr').forEach(q => new QRCode(q, {text: link(q.dataset.amt, q.dataset.note), width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M}));
+</script>
+</body>
+</html>
