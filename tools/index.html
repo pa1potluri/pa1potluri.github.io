@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PKP Studio Tools | Pavan Kumar Potluri</title>
 <meta property="og:title" content="PKP Studio Tools">
-<meta property="og:description" content="Production tools built by a VFX Supervisor. Pay by UPI, get your key and download.">
+<meta property="og:description" content="Free production tools built by a VFX Supervisor. Download directly, with no licence key.">
 <meta property="og:image" content="https://pa1potluri.github.io/tools/img/step_narrator_how.jpg">
 <meta property="og:url" content="https://pa1potluri.github.io/tools/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Production tools built by a VFX Supervisor. Pay by UPI, get your key and download.">
+<meta name="description" content="Free production tools built by a VFX Supervisor. Download directly, with no licence key.">
 <style>
 :root{--bg:#0f0d0c;--card:#1a1614;--line:#2e2622;--text:#f3ece6;--muted:#b3a69c;--gold:#e8b04a;--red:#c8372d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 system-ui,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
@@ -24,31 +24,24 @@ header{padding:56px 0 24px}h1{font-size:clamp(34px,5vw,52px);margin:0 0 8px}h1 e
 .product img{width:100%;border-radius:12px;border:1px solid var(--line)}
 .product h2{margin:0 0 4px;font-size:28px}.price{font-size:30px;font-weight:800;color:var(--gold)}
 ul{color:var(--muted);padding-left:20px}
-.pay{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:10px}
-.qr{background:#fff;padding:10px;border-radius:12px}
 .btn{display:inline-block;background:var(--gold);color:#1a1209;font-weight:800;padding:12px 22px;border-radius:10px;text-decoration:none}
-.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0 0}.steps li{counter-increment:s;padding:6px 0 6px 40px;position:relative;color:var(--text)}
-.steps li::before{content:counter(s);position:absolute;left:0;top:6px;width:28px;height:28px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-weight:800;font-size:14px}
-.soon{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:10px 0 50px}
-.soon div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}.soon b{display:block}.soon small{color:var(--muted)}
 footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 </style>
 <link rel="stylesheet" href="../compare.css?v=2">
+<link rel="stylesheet" href="../packages.css">
 </head>
 <body>
 <nav><div class="wrap"><b><span>PKP</span> Studio Tools</b><a href="../">← PKP Studio home</a></div></nav>
 <header><div class="wrap">
   <h1>Tools built by a <em>VFX Supervisor.</em></h1>
-  <p class="sub">I build these for my own productions. Simple, fast, made for people who make videos. Pay by UPI, get your licence key, download.</p>
+  <p class="sub">I build these for my own productions. Simple, fast, made for people who make videos. Free to download and use. No payment or licence key needed.</p>
 </div></header>
-<div class="wrap" style="margin-top:-10px"><div style="border:1px solid var(--gold);border-radius:14px;padding:14px 18px;background:rgba(232,176,74,.07)"><b style="color:var(--gold)">Version 1 launch: every tool at 50% off.</b> Buy v1 now and <b>version 2 (bug fixes) is a free update</b>. Version 3 brings more features. Found a bug? Tell me and it goes into v2.</div></div>
-
 <div class="wrap">
-  <div class="product">
+  <div class="product" id="step-narrator">
     <div><img src="img/step_narrator_how.jpg" alt="How Step Narrator works: press F9 and do your task, every click becomes a step, narration and subtitles are ready" style="width:100%;border-radius:12px"><p class="sub" style="font-size:13px;margin-top:10px">The real app window: <a href="img/step_narrator.png" target="_blank" rel="noopener">see a screenshot</a></p></div>
     <div>
       <h2>Step Narrator</h2>
-      <div class="price">₹249 <s style="font-size:18px;color:var(--muted);font-weight:600">₹499</s> <span style="font-size:13px;font-weight:700;color:#c8372d;vertical-align:middle">V1 LAUNCH · 50% OFF</span></div>
+      <div class="price">FREE</div>
       <p>Making a tutorial? Press F9, do your task, press F9 again. Every click, key and file you touched becomes a clean narration script, plus timed subtitles.</p>
       <ul>
         <li>Narration text ready for voice-over or text-to-speech</li>
@@ -57,15 +50,8 @@ footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var
         <li>The REC badge stays out of your screen recording</li>
         <li>Windows 10 / 11 · works offline</li>
       </ul>
-      <div class="pay">
-        <div class="qr" data-amt="249" data-note="Step Narrator licence"></div>
-        <div><b>UPI: pa1.potluri@okaxis</b><br><span class="sub">Pavan Potluri · ₹249</span><br><br><a class="btn upi" href="#" data-amt="249" data-note="Step Narrator licence">Pay on this phone</a></div>
-      </div>
-      <ol class="steps">
-        <li>Pay ₹249 by UPI (GPay, PhonePe, Paytm…).</li>
-        <li>Send the payment screenshot and your email to <a href="mailto:pa1.potluri@gmail.com?subject=Step%20Narrator%20licence">pa1.potluri@gmail.com</a> or by <a href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">LinkedIn message</a>.</li>
-        <li>You get your licence key and the download link, usually within a few hours.</li>
-      </ol>
+      <a class="btn" href="https://github.com/pa1potluri/pkp-studio/releases/download/step-narrator-v1.0/Step.Narrator.Setup.exe" aria-label="Download Step Narrator free">Download free</a>
+      <p class="sub">Made by a VFX supervisor. Want it done for you? <a href="#packages">See packages.</a></p>
     </div>
   </div>
 
@@ -74,11 +60,11 @@ footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var
       <figure class="compare" style="max-width:420px;margin:0 auto" data-before="../img/pairs/p32_photo.jpg"
         data-after='{"Oil":"../img/pairs/p32_oil.jpg","Watercolour":"../img/pairs/p32_watercolor.jpg","Anime":"../img/pairs/p32_anime.jpg","Pencil":"../img/pairs/p32_sketch.jpg"}'
         data-caption="Garden portrait · photograph by Pavan Kumar Potluri"></figure>
-      <p class="sub" style="font-size:13px">Example <b>keyframe looks</b> (painted with AI, not Style Track output). You paint or bring one keyframe like these; Style Track learns it and paints every frame of your video. Real video demo coming soon.</p>
+      <p class="sub" style="font-size:13px">Example <b>keyframe looks</b> (painted with AI, not Style Track output). You paint or bring one keyframe like these; Style Track learns it and paints every frame of your video. </p>
     </div>
     <div>
       <h2>Style Track</h2>
-      <div class="price">₹749 <s style="font-size:18px;color:var(--muted);font-weight:600">₹1,499</s> <span style="font-size:13px;font-weight:700;color:#c8372d;vertical-align:middle">V1 LAUNCH · 50% OFF</span></div>
+      <div class="price">FREE</div>
       <p>Turn video footage into a painted film: oil, watercolour, anime, sketch, your own style. Paint one or two keyframes the way you like, and Style Track learns your look and paints every frame, keeping the strokes stuck to the moving subject.</p>
       <ul>
         <li>Your own paint, your own style: nothing is sent to the cloud</li>
@@ -87,15 +73,8 @@ footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var
         <li>Save a look and reuse it on other shots</li>
         <li>Needs Windows 10/11 and an <b>NVIDIA GPU with 8 GB</b>; setup downloads the AI engine once (about 3 GB)</li>
       </ul>
-      <div class="pay">
-        <div class="qr" data-amt="749" data-note="Style Track licence"></div>
-        <div><b>UPI: pa1.potluri@okaxis</b><br><span class="sub">Pavan Potluri · ₹749</span><br><br><a class="btn upi" href="#" data-amt="749" data-note="Style Track licence">Pay on this phone</a></div>
-      </div>
-      <ol class="steps">
-        <li>Pay ₹749 by UPI.</li>
-        <li>Send the payment screenshot and your email to <a href="mailto:pa1.potluri@gmail.com?subject=Style%20Track%20licence">pa1.potluri@gmail.com</a> or by <a href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">LinkedIn message</a>.</li>
-        <li>You get your licence key and the download link, usually within a few hours.</li>
-      </ol>
+      <a class="btn" href="https://github.com/pa1potluri/pkp-studio/releases/download/style-track-v1.0/Style.Track.Setup.exe" aria-label="Download Style Track free">Download free</a>
+      <p class="sub">Made by a VFX supervisor. Want it done for you? <a href="#packages">See packages.</a></p>
     </div>
   </div>
 
@@ -106,7 +85,7 @@ footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var
     </div>
     <div>
       <h2>Painting Studio</h2>
-      <div class="price">₹999 <s style="font-size:18px;color:var(--muted);font-weight:600">₹1,999</s> <span style="font-size:13px;font-weight:700;color:#c8372d;vertical-align:middle">V1 LAUNCH · 50% OFF</span></div>
+      <div class="price">FREE</div>
       <p>Turn still pictures (photographs, paintings, AI art) into living, moving shots. Real depth, layered parallax camera moves, light, weather, film looks and transitions, rendered straight to MP4 for your edit.</p>
       <ul>
         <li>Automatic depth and cut-out layers, plus click-to-cut for anything it missed</li>
@@ -115,15 +94,8 @@ footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var
         <li>Import video elements and music; render one clip or the whole sequence</li>
         <li>Windows 10 / 11 · <b>no graphics card needed</b> · setup downloads <a href="https://github.com/pa1potluri/pkp-studio/blob/main/models/painting-studio.md" target="_blank" rel="noopener">4 free AI models</a> (about 520 MB)</li>
       </ul>
-      <div class="pay">
-        <div class="qr" data-amt="999" data-note="Painting Studio licence"></div>
-        <div><b>UPI: pa1.potluri@okaxis</b><br><span class="sub">Pavan Potluri · ₹999</span><br><br><a class="btn upi" href="#" data-amt="999" data-note="Painting Studio licence">Pay on this phone</a></div>
-      </div>
-      <ol class="steps">
-        <li>Pay ₹999 by UPI.</li>
-        <li>Send the payment screenshot and your email to <a href="mailto:pa1.potluri@gmail.com?subject=Painting%20Studio%20licence">pa1.potluri@gmail.com</a> or by <a href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">LinkedIn message</a>.</li>
-        <li>You get your licence key and the download link, usually within a few hours.</li>
-      </ol>
+      <a class="btn" href="https://github.com/pa1potluri/pkp-studio/releases/download/painting-studio-v1.0/Painting.Studio.Setup.exe" aria-label="Download Painting Studio free">Download free</a>
+      <p class="sub">Made by a VFX supervisor. Want it done for you? <a href="#packages">See packages.</a></p>
     </div>
   </div>
 
@@ -134,7 +106,7 @@ footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var
     </div>
     <div>
       <h2>Paper Cut Studio</h2>
-      <div class="price">₹499 <s style="font-size:18px;color:var(--muted);font-weight:600">₹999</s> <span style="font-size:13px;font-weight:700;color:#c8372d;vertical-align:middle">V1 LAUNCH · 50% OFF</span></div>
+      <div class="price">FREE</div>
       <p>Animate layered paper-cut art with a live preview and simple sliders: layers float, sway, flicker and glow, the camera pushes in, snow falls. Or type what you want: "moon rises slowly, fire flickers, slow push in".</p>
       <ul>
         <li>Drop in a folder of layer PNGs, or turn a single picture into layers with one click</li>
@@ -142,35 +114,22 @@ footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var
         <li>Camera moves and snow, saved per scene, rendered to MP4</li>
         <li>Windows 10 / 11 · <b>no graphics card needed</b> · setup downloads <a href="https://github.com/pa1potluri/pkp-studio/blob/main/models/paper-cut-studio.md" target="_blank" rel="noopener">1 free AI model</a></li>
       </ul>
-      <div class="pay">
-        <div class="qr" data-amt="499" data-note="Paper Cut Studio licence"></div>
-        <div><b>UPI: pa1.potluri@okaxis</b><br><span class="sub">Pavan Potluri · ₹499</span><br><br><a class="btn upi" href="#" data-amt="499" data-note="Paper Cut Studio licence">Pay on this phone</a></div>
-      </div>
-      <ol class="steps">
-        <li>Pay ₹499 by UPI.</li>
-        <li>Send the payment screenshot and your email to <a href="mailto:pa1.potluri@gmail.com?subject=Paper%20Cut%20Studio%20licence">pa1.potluri@gmail.com</a> or by <a href="https://www.linkedin.com/in/pavanpotluri" target="_blank" rel="noopener">LinkedIn message</a>.</li>
-        <li>You get your licence key and the download link, usually within a few hours.</li>
-      </ol>
+      <a class="btn" href="https://github.com/pa1potluri/pkp-studio/releases/download/paper-cut-studio-v1.0/Paper.Cut.Studio.Setup.exe" aria-label="Download Paper Cut Studio free">Download free</a>
+      <p class="sub">Made by a VFX supervisor. Want it done for you? <a href="#packages">See packages.</a></p>
     </div>
   </div>
 
-  <h2>Coming soon</h2>
-  <div class="soon">
-    <div><b>RPM Studio</b><small>Song pipeline: compose, mix, narration, lyric subtitles, remaster.</small></div>
-    <div><b>News Shorts</b><small>News story → script → paper-cut scenes → vertical short.</small></div>
-    <div><b>Presenter Studio</b><small>Talking, moving presenters from your own character pictures.</small></div>
-    <div><b>Desk Climber</b><small>A little character that lives on your desktop.</small></div>
-    <div><b>Hero</b><small>Your desktop assistant that runs all the tools.</small></div>
-  </div>
 </div>
-<footer><div class="wrap">Pavan Kumar Potluri · PKP Studio · Hyderabad, India · <a href="../consulting/">VFX consulting</a> · Outside India? Message me for a card / PayPal option.</div></footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script>
-// plain @ and %20: some UPI apps reject %40 or + in the link
-const link = (amt, note) => `upi://pay?pa=pa1.potluri@okaxis&pn=${encodeURIComponent('Pavan Potluri')}&am=${amt}&cu=INR&tn=${encodeURIComponent(note)}`;
-document.querySelectorAll('a.upi').forEach(a => a.href = link(a.dataset.amt, a.dataset.note));
-if (window.QRCode) document.querySelectorAll('.qr').forEach(q => new QRCode(q, {text: link(q.dataset.amt, q.dataset.note), width: 150, height: 150, correctLevel: QRCode.CorrectLevel.M}));
-</script>
+<section id="packages" class="packages"><div class="wrap">
+  <h2>Short on time? We make it for you.</h2>
+  <div class="package-grid">
+    <div class="package-card"><h3>1 Short</h3><p class="package-price">₹999</p><a class="btn" href="upi://pay?pa=pa1.potluri@okaxis&amp;pn=Pavan%20Potluri&amp;cu=INR&amp;am=999&amp;tn=1%20Short">Pay ₹999 by UPI</a></div>
+    <div class="package-card"><h3>Channel intro + 3 Shorts</h3><p class="package-price">₹2,999</p><a class="btn" href="upi://pay?pa=pa1.potluri@okaxis&amp;pn=Pavan%20Potluri&amp;cu=INR&amp;am=2999&amp;tn=Channel%20intro%20%2B%203%20Shorts">Pay ₹2,999 by UPI</a></div>
+  </div>
+  <p>Pay by UPI to <b>pa1.potluri@okaxis</b>, then email the payment screenshot to <a href="mailto:pa1.potluri@gmail.com?subject=PKP%20Studio%20video%20package">pa1.potluri@gmail.com</a>. Include your chosen package and what you would like made.</p>
+</div></section>
+<footer><div class="wrap">Pavan Kumar Potluri · PKP Studio · Hyderabad, India · <a href="../consulting/">VFX consulting</a> · <a href="upi://pay?pa=pa1.potluri@okaxis&amp;pn=Pavan%20Potluri&amp;cu=INR&amp;tn=Support%20PKP%20Studio">Support PKP Studio</a> (optional)</div></footer>
+
 <script src="../compare.js?v=2"></script>
 </body>
 </html>
